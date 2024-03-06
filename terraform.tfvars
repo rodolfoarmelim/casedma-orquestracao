@@ -4,4 +4,3 @@ eventbridge_role = "role/iamsr/RoleProducerDMA"
 tags = {
   cost_tag = "DMA"
 }
-n
