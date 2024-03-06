@@ -12,7 +12,7 @@ resource "aws_cloudwatch_log_group" "log_state_machine_produto_credito" {
 resource "aws_sfn_state_machine" "produto_credito_state_machine" {
   name     = "produto_credito_state_machine"
   role_arn = join(":",["arn:aws:iam:", data.aws_caller_identity.current.account_id, var.sf_role])
-  definition = jsonencode(jsondecode(file("../app/stepfunctions/state_machine_produto_credito.json")))
+  definition = jsonencode(jsondecode(file("./app/stepfunctions/state_machine_produto_credito.json")))
 
   logging_configuration {
     level    = "ALL"

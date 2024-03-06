@@ -1,8 +1,5 @@
 name: "Terraform action"
 on:
-  push:
-    branches:
-      - 'teste_esteira*'
   pull_request:
     types: 
       - opened
