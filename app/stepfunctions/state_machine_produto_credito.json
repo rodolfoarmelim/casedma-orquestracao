@@ -1,0 +1,30 @@
+{
+  "Comment": "Execução sequencial de Glue Jobs",
+  "StartAt": "Acionar Glue Job corp_produto_cartao_credito_sor",
+  "States": {
+    "Acionar Glue Job corp_produto_cartao_credito_sor": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "corp_produto_cartao_credito_sor"
+      },
+      "Next": "Acionar Glue Job corp_produto_cartao_credito_sot"
+    },
+    "Acionar Glue Job corp_produto_cartao_credito_sot": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "corp_produto_cartao_credito_sot"
+      },
+      "Next": "Acionar Glue Job corp_produto_cartao_credito_spec"
+    },
+    "Acionar Glue Job corp_produto_cartao_credito_spec": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startJobRun.sync",
+      "Parameters": {
+        "JobName": "corp_produto_cartao_credito_spec"
+      },
+      "End": true
+    }
+  }
+}
