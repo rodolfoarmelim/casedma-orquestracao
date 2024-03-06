@@ -2,7 +2,7 @@ name: "Terraform action"
 on:
   pull_request:
     types: 
-      - closed
+      - opened
     branches:
       - main
 permissions:
