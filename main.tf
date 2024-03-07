@@ -34,5 +34,3 @@ resource "aws_cloudwatch_event_target" "target_produto_credito" {
     arn = aws_sfn_state_machine.produto_credito_state_machine.arn
   role_arn = join(":",["arn:aws:iam:", data.aws_caller_identity.current.account_id, var.eventbridge_role])
 }
-
-
