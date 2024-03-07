@@ -14,6 +14,10 @@ resource "aws_sfn_state_machine" "produto_credito_state_machine" {
   role_arn = join(":",["arn:aws:iam:", data.aws_caller_identity.current.account_id, var.sf_role])
   definition = jsonencode(jsondecode(file("./app/stepfunctions/state_machine_produto_credito.json")))
 
+  tags = {
+    DMA = "DataMeshAcademy"
+  }
+  
   logging_configuration {
     level    = "ALL"
     include_execution_data = true
