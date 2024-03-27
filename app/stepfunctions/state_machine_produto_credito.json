@@ -6,7 +6,7 @@
       "Type": "Task",
       "Resource": "arn:aws:states:::glue:startJobRun.sync",
       "Parameters": {
-        "JobName": "corp_produto_cartao_credito_sor"
+        "JobName": "corp_produto_cartao_credito_sor_rodolfo"
       },
       "Next": "Acionar Glue Job corp_produto_cartao_credito_sot"
     },
@@ -14,7 +14,7 @@
       "Type": "Task",
       "Resource": "arn:aws:states:::glue:startJobRun.sync",
       "Parameters": {
-        "JobName": "corp_produto_cartao_credito_sot"
+        "JobName": "corp_produto_cartao_credito_sot_rodolfo"
       },
       "Next": "Acionar Glue Job corp_produto_cartao_credito_spec"
     },
@@ -22,7 +22,7 @@
       "Type": "Task",
       "Resource": "arn:aws:states:::glue:startJobRun.sync",
       "Parameters": {
-        "JobName": "corp_produto_cartao_credito_spec"
+        "JobName": "corp_produto_cartao_credito_spec_rodolfo"
       },
       "End": true
     }
